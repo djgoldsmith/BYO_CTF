@@ -7,15 +7,15 @@ title:  Bring Your Own CTF
 
 Next few weeks we are going to look at building your own CTF challenge:
 
-Topcis to Cover:
+Topics to Cover:
 
-  - Linux Enumeration and Privelege Escelation
+  - Linux Enumeration and Privilege Escalation
   - Linux Configuration
   - Docker
 
 ## Task
 
-In Groups you are going to build a Privielge Escelation Challenge.
+In Groups you are going to build a Privilege Escalation Challenge.
 Next time we will try to complete each others challenges.
 
   1.  Get yourself onto GTFO Bins and find a relevant Binary
@@ -131,7 +131,7 @@ CONTAINER ID   IMAGE                                          COMMAND           
   
 We can see the container that was created is called **byo_ctf_template**
 
-3. Use docker exec to drop a shell in the docker-constainer
+3. Use docker exec to drop a shell in the docker-container
 
 ```
 $ docker exec -it byo_ctf-template-1 /bin/bash
@@ -147,9 +147,9 @@ Lets imagine we pick Python for our example.  https://gtfobins.github.io/gtfobin
 
 Our Exploit is going to need several stages.
 
-  1. Check That Pyhon is installed. 
+  1. Check That Python is installed. 
   
-     As a stripped back OS,  Python may not be installed on the system.  We can check uing the ```which``` command.
+     As a stripped back OS,  Python may not be installed on the system.  We can check using the ```which``` command.
 	 
 	 ```
 	 root@72ffe464b889:/# which python
@@ -195,9 +195,9 @@ Our Exploit is going to need several stages.
 	```
 
 
-  4. Add the Vulnerablity.
+  4. Add the Vulnerability.
   
-     We can also upate he docker file to add the acual vunlerablity.
+     We can also update he docker file to add the actual vulnerability.
 	 
 	 We know if python has SUID rights, then we can exploit it.
 	 
@@ -210,4 +210,11 @@ Our Exploit is going to need several stages.
 	 ```
 	 
 	 
-  5. Shutdown and Rebild the Docker Container,  then Test.
+  5. Shutdown and Rebuild the Docker Container,  then Test.
+  
+     - docker-compose down
+	 - docker-compose build
+	 - docker-compose up
+	 
+	 - SSH in as the cueh user
+	 - Test if we can get the flag.
